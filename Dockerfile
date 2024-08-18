@@ -1,8 +1,9 @@
-FROM maven:3.8.7-openjdk-11-slim AS build
-WORKDIR /app
+FROM maven:3.8.6-openjdk-11-slim
 COPY pom.xml /app/pom.xml
-COPY src ./src
+COPY src /app/src
+WORKDIR /app
 RUN mvn clean package
+
 
 FROM openjdk:11-jre-slim
 WORKDIR /app
