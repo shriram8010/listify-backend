@@ -1,7 +1,6 @@
 FROM maven:3.8.7-openjdk-11-slim AS build
 WORKDIR /app
 COPY pom.xml /app/pom.xml
-COPY pom.xml
 COPY src ./src
 RUN mvn clean package
 
